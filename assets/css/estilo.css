@@ -25,9 +25,6 @@ body::-webkit-scrollbar-thumb {background-color: darkgrey;}
 
 .color-menu{
     width: 100%;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
     box-shadow: inset 0 20px 100px #000000d3;
     position: fixed;
     transition: .5s ease-in-out;
@@ -105,7 +102,7 @@ ___________________________________________ */
     height: 100vh;
     
     background: #212121;
-    background-image: url(../img/wall3.jpg);
+    /* background-image: url(../img/wall3.jpg); */
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
@@ -156,18 +153,18 @@ ___________________________________________ */
     padding: 1% 9%;
 }
 
-/* Sla
+/* Posts
 ___________________________________________ */
 
-.principais-noticias{
+.principais-posts{
     width: 100%;
     background: #f3f3f3;
     box-shadow: 0 -50px 100px #212121;
     padding: 2% 0;
-    border-bottom: 3px solid #d1d1d1;
+    /* border-bottom: 3px solid #d1d1d1; */
 }
 
-.principais-noticias h1{
+.principais-posts h1{
     text-align: justify;
     font-weight: bolder;
     text-transform: uppercase;
@@ -175,7 +172,7 @@ ___________________________________________ */
     padding: 0 0 20px;
 }
 
-.p-noticias-align{
+.p-posts-align{
     width: 100%;
     display: flex;
     align-items: center;
@@ -183,24 +180,110 @@ ___________________________________________ */
     padding: 8px 0;
 }
 
-.item-p-noticias{
+.item-p-posts{
     width: 31%;
     height: 200px;
     background: #e471ab;
 }
 
-.item-info-noticias{
+.item-info-posts{
     width: 31%;
     text-align: justify;
     font-weight: bolder;
     color: #151515;
 }
 
-.item-info-noticias h3{
+.item-info-posts h3{
     text-transform: uppercase;
     color: #518cf3;
 }
 
-.item-info-noticias p{
+.item-info-posts p{
     padding: 5px 0;
+}
+
+/* sla
+___________________________________________ */
+
+.color-sla{
+    width: 100%;
+    background: #1e1e26;
+    /* border-bottom: 3px solid #d1d1d1; */
+}
+
+.align-sla{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+}
+
+/* Outros posts
+___________________________________________ */
+
+.posts{
+    width: 100%;
+    background: #f3f3f3;
+    padding: 2% 0;
+}
+
+.posts h1{
+    text-align: justify;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #151515;
+    padding: 0 0 20px;
+}
+
+.posts-align{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.display-item-post{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+}
+
+.item-posts{
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.img-post{
+    width: 31%;
+    height: 200px;
+    margin: 0 20px 0 0;
+    background: #e471ab; 
+}
+
+.text-post{
+    width: 31%;
+    height: 200px;
+    text-align: justify;
+    color: #151515;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+
+.text-post h3{
+    text-transform: uppercase;
+    color: #518cf3;
+}
+
+/* Footer
+___________________________________________ */
+
+.footer{
+    width: 100%;
+    height: 400px;
+    background: #1e1e26;
 }
