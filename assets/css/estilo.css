@@ -1,0 +1,206 @@
+/* Configs
+___________________________________________ */
+
+@import url(menuhamb.css) (max-width:800px);
+
+body::-webkit-scrollbar {width: 10px} 
+body::-webkit-scrollbar-thumb {background-color: darkgrey;}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    font-family: 'century gothic', sans-serif;
+    /* font-family: 'Quantico', sans-serif; */
+    /* font-family: Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif; */
+}
+
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.color-menu{
+    width: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    box-shadow: inset 0 20px 100px #000000d3;
+    position: fixed;
+    transition: .5s ease-in-out;
+}
+
+.color-menu-fixo{
+    background: #030303;
+    background-image: none;
+    position: fixed;
+    transition: .5s ease-in-out;
+}
+
+/* Nav menu
+___________________________________________ */
+
+nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a.logo{
+    color: #f3f3f3;
+    font-size: 30px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+a.logo span{
+    font-weight: 900;
+}
+
+.section-nav{
+    width: 50%;
+    text-align: start;
+}
+
+.section-nav:last-of-type{
+    text-align: end;
+}
+
+.section-nav img{
+    height: 60px;
+}
+
+nav ul li{
+    display: inline;
+    margin-left: 15px;
+}
+
+nav ul li a{
+    color: #f3f3f3;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: .4s;
+}
+
+nav ul li a:hover{
+    color: #d2b7dc;
+    text-shadow: 0 0 5px #d2b7dc;
+}
+
+/* a.active-li{color: #f0b04b; text-shadow: 0 0 10px #f0b04b;} */
+a.active-li{color: #e471ab; text-shadow: 0 0 10px #e471ab;}
+
+/* Banner
+___________________________________________ */
+
+.banner{
+    width: 100%;
+    /* height: calc(100vh - 70px); */
+    height: 100vh;
+    
+    background: #212121;
+    background-image: url(../img/wall3.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+.banner-align{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1{
+    font-weight: bolder;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0 0 30px #212121;
+}
+
+.banner p{
+    width: 70%;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+}
+
+.banner button{
+    background: transparent;
+    color: #f3f3f3;
+    border: 1px solid #f3f3f3;
+    border-radius: 5px;
+    padding: 1% 7%;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-size: 17px;
+    box-shadow: 0 0 100px #212121;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.banner button:hover{
+    background: #0000005e;
+    text-shadow: 0 0 20px #f3f3f3;
+    padding: 1% 9%;
+}
+
+/* Sla
+___________________________________________ */
+
+.principais-noticias{
+    width: 100%;
+    background: #f3f3f3;
+    box-shadow: 0 -50px 100px #212121;
+    padding: 2% 0;
+    border-bottom: 3px solid #d1d1d1;
+}
+
+.principais-noticias h1{
+    text-align: justify;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: #151515;
+    padding: 0 0 20px;
+}
+
+.p-noticias-align{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.item-p-noticias{
+    width: 31%;
+    height: 200px;
+    background: #e471ab;
+}
+
+.item-info-noticias{
+    width: 31%;
+    text-align: justify;
+    font-weight: bolder;
+    color: #151515;
+}
+
+.item-info-noticias h3{
+    text-transform: uppercase;
+    color: #518cf3;
+}
+
+.item-info-noticias p{
+    padding: 5px 0;
+}
