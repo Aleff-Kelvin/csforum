@@ -74,9 +74,18 @@
         </div>
     </div>
 
-    <div class="color-sla">
-        <div class="container align-sla">
-
+    <div class="color-notificacao">
+        <div class="container align-notificacao">
+            <div class="item-notificacao">
+                <h1>Conheça a história do Counter Strike!</h1>
+            </div>
+            <div class="item-notificacao">
+                <button>Me Conte essa História!</button>
+            </div>
+            <!-- <h1>Cadastre-se</h1>
+            <p>Seja notificado quando tiver um post novo!</p>
+            <input type="text">
+            <button>Quero ser Notificado!</button> -->
         </div>
     </div>
 
@@ -115,7 +124,7 @@
 
     <div class="footer">
         <div class="container align-footer">
-            
+
         </div>
     </div>
 </body>
@@ -127,8 +136,14 @@
         var menu = document.getElementById('menu'); // colocar em cache
    
         window.addEventListener('scroll', function () {
-            if (window.scrollY > 100) menu.classList.add('color-menu-fixo'); // > 100 ou outro valor desejado
-            else menu.classList.remove('color-menu-fixo');
+            if (window.scrollY > 100) {
+                menu.classList.add('color-menu-fixo');
+                menu.classList.remove('color-menu');
+            } 
+            else{
+                menu.classList.remove('color-menu-fixo');
+                menu.classList.add('color-menu');
+            }
         });
     })();
 
