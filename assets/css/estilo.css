@@ -208,38 +208,52 @@ ___________________________________________ */
     padding: 5px 0;
 }
 
-/* notificação
+/* cadastro e login
 ___________________________________________ */
 
-.color-notificacao{
+.color-cad-log{
+    width: 100%;
+    background: #90b6f8;
+    padding: 2% 0;
+}
+
+.align-cad-log{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* história do cs
+___________________________________________ */
+
+.color-historia{
     width: 100%;
     background: #1e1e26;
     background-image: url(../img/818827.png);
     background-position: center;
     background-size: cover;
-    /* border-bottom: 3px solid #d1d1d1; */
+    box-shadow: inset 0 0 50px #000000;
 }
 
-.align-notificacao{
+.align-historia{
     width: 100%;
     display: flex;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     padding: 5% 0;
 }
 
-.item-notificacao{
+.item-historia{
     width: 50%;
     color: #f3f3f3;
 }
 
-.item-notificacao h1{
+.item-historia h1{
     font-size: 60px;
     text-align: justify;
 }
 
-.item-notificacao button{
+.item-historia button{
     width: 70%;
     padding: 4%;
     border: 1px solid #518cf3;
@@ -253,13 +267,13 @@ ___________________________________________ */
     transition: .4s ease-in-out;
 }
 
-.item-notificacao button:hover{
+.item-historia button:hover{
     background: #f0b04b;
     border: 1px solid #f0b04b;
     color: #f3f3f3;
     padding: 5%;
     width: 75%;
-    /* box-shadow: 0 0 50px #f3f3f3; */
+    font-size: 27px;
 }
 
 /* Outros posts
