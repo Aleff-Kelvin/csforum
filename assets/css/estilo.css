@@ -11,6 +11,7 @@ body::-webkit-scrollbar-thumb {background-color: darkgrey;}
     padding: 0;
     outline: none;
     text-decoration: none;
+    box-sizing: border-box;
     font-family: 'century gothic', sans-serif;
     /* font-family: 'Quantico', sans-serif; */
     /* font-family: Brandon Text,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif; */
@@ -164,17 +165,16 @@ ___________________________________________ */
 
 .principais-posts{
     width: 100%;
-    background: #f3f3f3;
+    background: #fff;
     box-shadow: 0 -50px 100px #212121;
     padding: 2% 0;
-    /* border-bottom: 3px solid #d1d1d1; */
 }
 
 .principais-posts h1{
     text-align: justify;
     font-weight: bolder;
     text-transform: uppercase;
-    color: #151515;
+    color: #59b1e4;
     padding: 0 0 20px;
 }
 
@@ -190,6 +190,9 @@ ___________________________________________ */
     width: 31%;
     height: 200px;
     background: #e471ab;
+    background-image: url(../img/pubex.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .item-info-posts{
@@ -213,7 +216,7 @@ ___________________________________________ */
 
 .color-cad-log{
     width: 100%;
-    background: #90b6f8;
+    background: #cdddfa;
     padding: 2% 0;
 }
 
@@ -221,6 +224,10 @@ ___________________________________________ */
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+}
+
+.align-cad-log form{
+    width: 50%;
 }
 
 /* história do cs
@@ -250,7 +257,7 @@ ___________________________________________ */
 
 .item-historia h1{
     font-size: 60px;
-    text-align: justify;
+    text-align: left;
 }
 
 .item-historia button{
@@ -281,7 +288,7 @@ ___________________________________________ */
 
 .posts{
     width: 100%;
-    background: #f3f3f3;
+    background: #ebebeb;
     padding: 2% 0;
 }
 
@@ -308,31 +315,56 @@ ___________________________________________ */
 }
 
 .item-posts{
-    width: 100%;
     display: flex;
     justify-content: left;
+    background: #fff;
 }
 
 .img-post{
-    width: 31%;
-    height: 200px;
-    margin: 0 20px 0 0;
-    background: #e471ab; 
+    width: 55%;
+    height: 400px;
+    background: #e471ab;
+    background-image: url(../img/pubex.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.hover-posts{
+    width: 100%;
+    height: 100%;
+    background: #1e1e2663;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 100;
+    opacity: 0;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.img-post p:hover{
+    opacity: 1;
 }
 
 .text-post{
-    width: 31%;
-    height: 200px;
+    width: 45%;
+    height: 100%;
+    padding: 5%;
     text-align: justify;
+    text-overflow: ellipsis;
     color: #151515;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;  
 }
 
-.text-post h3{
+.text-post h1{
     text-transform: uppercase;
     color: #518cf3;
+}
+
+.text-post p{
+    font-size: 20px;
 }
 
 /* Footer
@@ -340,6 +372,7 @@ ___________________________________________ */
 
 .footer{
     width: 100%;
-    height: 400px;
+    padding: 1% 0;
     background: #1e1e26;
+    color: #fff;
 }
