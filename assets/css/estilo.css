@@ -376,3 +376,19 @@ ___________________________________________ */
     background: #1e1e26;
     color: #fff;
 }
+
+.a-git{
+    color: #518cf3;
+    text-decoration: underline;
+}
+
+.align-logo{
+    width: 100%;
+    /* border-top: 2px solid #f3f3f3; */
+    padding-top: 2px;
+    margin-top: 2px;
+}
+
+.align-logo .logo{
+    font-size: 23px;
+}
