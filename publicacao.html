@@ -20,7 +20,7 @@
                 <div class="section-nav">
                     <ul>
                         <li><a href="index.html">Início</a></li>
-                        <li><a href="historia.html" class="active-li">História do CS</a></li>
+                        <li><a href="historia.html">História do CS</a></li>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">More</a></li>
                     </ul>
@@ -29,9 +29,17 @@
         </div>
     </div>
 
-    <div class="section-cs">
-        <div class="container align-section-cs">
+    <div class="container align-publicacao">
+        <h1>Titulo da Publicação</h1>
+        <p class="coment-pub">Comentário simples</p>
+        <p class="data-pub">15 de Maio de 2021 às 15h58</p>
 
+        <div class="imagem-pub"></div>
+
+        <div class="container-pub">
+            <p class="text-pub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias id assumenda facere esse harum suscipit
+            perspiciatis, nobis maiores ullam officia ipsa dolorem fugit vero. Recusandae odio earum eligendi
+            necessitatibus ab!</p>
         </div>
     </div>
 
@@ -51,6 +59,8 @@
 
 <script>
 
+    menu.style.background='#000';
+
     (function () {
         var menu = document.getElementById('menu'); // colocar em cache
    
@@ -58,10 +68,12 @@
             if (window.scrollY > 0) {
                 menu.classList.add('color-menu-fixo');
                 menu.classList.remove('color-menu');
+                menu.style.borderBottom='none';
             } 
             else{
                 menu.classList.remove('color-menu-fixo');
                 menu.classList.add('color-menu');
+                menu.style.borderBottom='3px solid #518cf3';
             }
         });
     })();
