@@ -100,6 +100,20 @@ nav ul li a:hover{
 /* a.active-li{color: #f0b04b; text-shadow: 0 0 10px #f0b04b;} */
 a.active-li{color: #487ed4; text-shadow: 0 0 10px #487ed4;}
 
+.color-menu-admin{
+    background: #0c0c0c;
+    width: 100%;
+    padding: 3px 0;
+    border-top: 1px solid #303030;
+}
+
+.color-menu-admin h2{
+    color: #fff;
+    font-weight: lighter;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
 /* Banner
 ___________________________________________ */
 
@@ -443,6 +457,7 @@ ___________________________________________ */
     background-image: url(../img/pubex.png);
     background-position: center;
     background-size: cover;
+    background: #6282b6;
 }
 
 .container-pub{
@@ -456,3 +471,105 @@ ___________________________________________ */
     color: #303030;
     margin-bottom: 20px;
 }
+
+/* publicar.html */
+
+/* formulário de publicação
+___________________________________________ */
+
+.container-admin{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.opt-admin{
+    height: 100%;
+    background: #1e1e26;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75px;
+}
+
+.btn-opt-admin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f3f3f3;
+}
+
+.opt-admin img{
+    width: 75px;
+    padding: 15px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.opt-admin img:hover{
+    background: #f0b04b;
+    border-radius: 50% 0 50% 0;
+    width: 100px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 20px #f0b14b8c;
+}
+
+.form-pub{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-pub form{
+    width: 35%;
+    background: #1e1e26;
+    padding: 20px;
+    color: #fff;
+}
+
+.form-pub h1{text-align: center;}
+
+.form-pub p:first-of-type{padding: 10px 0 5px;}
+.form-pub p:not(:first-of-type){padding: 15px 0 5px;}
+
+.form-pub form input, textarea{
+    width: 100%;
+    padding: 10px;
+    background: #424242;
+    color: #fff;
+    border: none;
+    resize: none;
+}
+
+.form-pub form input[type='submit']{
+    background: #518cf3;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    padding: 15px 0;
+    margin: 10px 0 0;
+}
+
+.form-pub form input[type='submit']:hover{
+    /* background: #75c575; */
+    background: #f8c471;
+}
+
+.form-pub select{
+    width: 100%;
+    padding: 10px;
+    background: #424242;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
