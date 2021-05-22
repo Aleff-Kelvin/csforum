@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Quantico&amp;display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/logo2.png"
+    type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <title>CSBlog | Plataforma para Players de CS!</title>
+</head>
+<body bgcolor="#6282b6">
+    <!-- <div class="color-menu" id="menu">
+        <div class="container">
+            <nav>
+                <div class="section-nav">
+                    <a href="index.html" class="logo"><span>CS</span> Blog</a>
+                </div>
+                <div class="section-nav">
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="historia.html">História do CS</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">More</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="color-menu-admin">
+            <div class="container">
+                <h2>Admin</h2>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="container-admin">
+        <div class="opt-admin">
+           <a href="index.html"><img src="assets/img/btn-sair.png" alt=""></a>
+           <a href="adicionar.html"><img src="assets/img/btn-adicionar.png" alt="" class="opt-active"></a>
+           <a href="atualizar.html"><img src="assets/img/btn-atualizar.png" alt=""></a>
+           <a href=""><img src="assets/img/btn-excluir.png" alt=""></a>            
+        </div>
+
+        <div class="form-pub">
+
+            <div class="opt-edit">
+                <h2>O que você quer editar?</h2>
+                <select id="editar" onchange="return editar_campo()" required minlength="4">
+                    <option value="titulo">Titulo</option>
+                    <option value="descricao">Descrição</option>
+                    <option value="imagem">Imagem</option>
+                    <option value="categoria">Categoria</option>
+                    <option value="conteudo">Conteudo</option>
+                </select>
+            </div>
+
+            <form id="form_publicar" method="post" onsubmit="return atualizar()">
+                <h1 id="h1">Atualize um Post!</h1>
+
+                <div id="sec_id">
+                    <p>Id do Post:</p>
+                    <input type="text" name="id" id="id" autofocus="autofocus" required minlength="4">
+                </div>
+                
+                <div id="sec_titulo">
+                    <p>Titulo do Post:</p>
+                    <input type="text" name="titulo" id="titulo" autofocus="autofocus" required minlength="4">
+                </div>
+               
+                <div id="sec_descricao">
+                    <p>Descrição do Post:</p>
+                    <input type="text" name="descricao" id="descricao" autofocus="autofocus" required minlength="4">
+                </div>
+              
+                <div id="sec_imagem">
+                    <p>Url da Imagem Principal:</p>
+                    <input type="text" name="imagem" id="imagem" required minlength="4">
+                </div>
+                
+                <div id="sec_categoria">
+                    <p>Categoria do Post:</p>
+                    <select name="categoria" id="categoria" required minlength="4">
+                        <option value="dicas">Dicas</option>
+                        <option value="curiosidades">Curiosidades</option>
+                        <option value="novidades">Novidades</option>
+                    </select>
+                </div>
+            
+                <div id="sec_conteudo">
+                    <p>Conteudo do Post:</p>
+                    <textarea name="conteudo" id="conteudo" cols="52" rows="5" required minlength="4"></textarea>
+                </div>
+                <br>
+                <input type="submit" id="btn_enviar" value="Postar!">
+            </form>
+        </div>    
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    form_publicar.style.display='none';
+    sec_id.style.display='none';
+    sec_titulo.style.display='none';
+    sec_descricao.style.display='none';
+    sec_imagem.style.display='none';
+    sec_categoria.style.display='none';
+    sec_conteudo.style.display='none';   
+
+    function editar_campo() {
+        var campo_escolhido = editar.value;
+
+        if (campo_escolhido == 'titulo') {
+            form_publicar.style.display='block';
+            sec_id.style.display='block';
+            sec_titulo.style.display='block';
+
+            sec_descricao.style.display='none';
+            sec_imagem.style.display='none';
+            sec_categoria.style.display='none';
+            sec_conteudo.style.display='none';   
+        }
+        
+        if (campo_escolhido == 'descricao') {
+            form_publicar.style.display='block';
+            sec_id.style.display='block';
+            sec_descricao.style.display='block';
+
+            sec_titulo.style.display='none';
+            sec_imagem.style.display='none';
+            sec_categoria.style.display='none';
+            sec_conteudo.style.display='none'; 
+        }
+
+        if (campo_escolhido == 'imagem') {
+            form_publicar.style.display='block';
+            sec_id.style.display='block';
+            sec_imagem.style.display='block';
+
+            sec_titulo.style.display='none';
+            sec_descricao.style.display='none';
+            sec_categoria.style.display='none';
+            sec_conteudo.style.display='none'; 
+        }
+
+        if (campo_escolhido == 'categoria') {
+            form_publicar.style.display='block';
+            sec_id.style.display='block';
+            sec_categoria.style.display='block';
+
+            sec_titulo.style.display='none';
+            sec_descricao.style.display='none';
+            sec_imagem.style.display='none';
+            sec_conteudo.style.display='none'; 
+        }
+
+        if (campo_escolhido == 'conteudo') {
+            form_publicar.style.display='block';
+            sec_id.style.display='block';
+            sec_conteudo.style.display='block';
+
+            sec_titulo.style.display='none';
+            sec_descricao.style.display='none';
+            sec_imagem.style.display='none';
+            sec_categoria.style.display='none';
+        }
+        
+    }
+
+    function publicar() {
+        var formulario = new URLSearchParams(new FormData(form_publicar));
+
+        if (!(categoria.value == 'vazio')) {
+            fetch("/publicar/inserir", {
+
+                method: "POST",
+                body: formulario
+
+            }).then(function (response) {
+            if (response.ok) {
+                alert(`Publicação está no ar!`);
+                
+                titulo.value = ``;
+                descricao.value = ``;
+                imagem.value = ``;
+                conteudo.value = ``;
+
+            } else {
+                alert(`Erro ao tentar publicar!`);
+            }
+
+            });
+
+            return false;
+
+        } else {
+            alert(`Insira uma categoria!`);
+        }
+        
+    }
+
+</script>
