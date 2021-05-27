@@ -1,3 +1,9 @@
+var response = require('express');
+var router = express.Router();
+// var sequelize = require('../models').sequelize;
+// const { response } = require("express");
+const 
+
 const Main = {
     init: () => {
         Main.buildPosts();
@@ -5,7 +11,7 @@ const Main = {
     getPosts: async () => {
         const response = await fetch("/publicar/posts", {
             method: 'get'
-        })
+        });
         const posts = await response.json();
         console.log(posts);
 
@@ -14,7 +20,7 @@ const Main = {
     buildPosts: async () => {
         const posts = await Main.getPosts();
         const postContainer = document.querySelector('.posts .container .posts-align');
-
+        
         posts.forEach(post => {
             postContainer.innerHTML += `
             <div class="posts-align">
@@ -33,4 +39,41 @@ const Main = {
     }
 }
 
+const News = {
+    init: () => {
+        News.buildPosts();
+    },
+    getPosts: async () => {
+        const response = await fetch("publicar/postsRecents", {
+            method: 'get'
+        });
+        const posts = await response.json();
+        console.log(posts);
+
+        return posts;
+    },
+    buildPosts: async () => {
+        const posts = await News.getPosts();
+         
+        const postsContainerImg = document.querySelector('.principais-posts .container #p_posts_aligni');
+        const postsContainerText = document.querySelector('.principais-posts .container #p_posts_alignt');
+
+        posts.forEach(imgPost => {
+            postsContainerImg.innerHTML += `
+            <div class="item-p-posts" style="background-image: url(${imgPost.imagem})">
+                <a href="publicacao.html?id=${imgPost.id}"><p class="hover-posts">Ver post</p></a>
+            </div>`;
+        });
+
+        posts.forEach(textPost => {
+            postsContainerText.innerHTML += `
+            <div class="item-info-posts">
+                <h3>${textPost.titulo}</h3>
+                <p>${textPost.conteudo}</p>
+            </div>`;
+        });
+    }
+}
+
 window.onload = Main.init; 
+window.onload = News.init;

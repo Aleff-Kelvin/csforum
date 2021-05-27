@@ -31,16 +31,6 @@ const Publicacao = {
                 <p class="text-pub">${post.conteudo}</p>
             </div>
         </div>`;
-
-        // const tituloPost = document.querySelector('.align-publicacao h1');
-        // tituloPost.innerHTML = post.titulo;
-
-        // const descricaoPost = document.querySelector('.align-publicacao .coment-pub');
-        // descricaoPost.innerHTML = post.descricao;
-
-        // const conteudoPost = document.querySelector('.align-publicacao .container-pub .text-pub');
-        // conteudoPost.innerHTML = post.conteudo;
-
     }
 }
 

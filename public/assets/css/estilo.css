@@ -333,6 +333,7 @@ ___________________________________________ */
     display: flex;
     justify-content: left;
     background: #fff;
+    height: 400px;
 }
 
 .img-post{
@@ -370,6 +371,7 @@ ___________________________________________ */
     padding: 5%;
     text-align: justify;
     text-overflow: ellipsis;
+    overflow-y: hidden;
     color: #151515;
 }
 
@@ -381,6 +383,7 @@ ___________________________________________ */
 
 .text-post p{
     font-size: 20px;
+    word-wrap: break-word;
 }
 
 /* Footer

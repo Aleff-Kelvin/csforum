@@ -23,9 +23,20 @@ router.post('/inserir', function(req, res, next) {
   	});
 });
 
+
+/* Mostrar os posts recentes */
+router.get('/postsRecents', async function(req, res, next) {
+	const ultimasPublicacoes = await Publicar.findAll({
+		order: [["id_post","DESC"]], 
+    	limit: 3,
+	});
+
+	res.send(ultimasPublicacoes);
+});
+
 /* Mostrar os posts */
 router.get('/posts', async function(req, res, next) {
-	const publicacoes = await Publicar.findAll()
+	const publicacoes = await Publicar.findAll();
 
 	res.send(publicacoes);
 });

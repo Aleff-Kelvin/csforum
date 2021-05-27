@@ -78,32 +78,27 @@
     function publicar() {
         var formulario = new URLSearchParams(new FormData(form_publicar));
 
-        if (!(categoria.value == 'vazio')) {
-            fetch("/publicar/inserir", {
+        fetch("/publicar/inserir", {
 
-                method: "POST",
-                body: formulario
+            method: "POST",
+            body: formulario
 
-            }).then(function (response) {
-            if (response.ok) {
-                alert(`Publicação está no ar!`);
-                
-                titulo.value = ``;
-                descricao.value = ``;
-                imagem.value = ``;
-                conteudo.value = ``;
-
-            } else {
-                alert(`Erro ao tentar publicar!`);
-            }
-
-            });
-
-            return false;
+        }).then(function (response) {
+        if (response.ok) {
+            alert(`Publicação está no ar!`);
+            
+            titulo.value = ``;
+            descricao.value = ``;
+            imagem.value = ``;
+            conteudo.value = ``;
 
         } else {
-            alert(`Insira uma categoria!`);
+            alert(`Erro ao tentar publicar!`);
         }
+
+        });
+
+        return false;
         
     }
 
