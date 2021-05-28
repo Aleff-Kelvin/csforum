@@ -4,10 +4,10 @@ var sequelize = require('../models').sequelize;
 var Publicar = require('../models').Publicar;
 
 /* Inserir os posts */
-router.post('/inserir', function(req, res, next) {
+router.post('/inserir', async function(req, res, next) {
 	console.log('Inserindo um post');
 	
-	Publicar.create({
+	var publicar = await Publicar.create({
 		titulo : req.body.titulo,
 		descricao : req.body.descricao,
 		imagem: req.body.imagem,
@@ -36,7 +36,7 @@ router.get('/postsRecents', async function(req, res, next) {
 
 /* Mostrar os posts */
 router.get('/posts', async function(req, res, next) {
-	const publicacoes = await Publicar.findAll();
+	const publicacoes = await Publicar.findAll({order: [["id_post","DESC"]]});
 
 	res.send(publicacoes);
 });

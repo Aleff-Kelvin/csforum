@@ -1,8 +1,4 @@
-var response = require('express');
-var router = express.Router();
-// var sequelize = require('../models').sequelize;
 // const { response } = require("express");
-const 
 
 const Main = {
     init: () => {
@@ -44,10 +40,10 @@ const News = {
         News.buildPosts();
     },
     getPosts: async () => {
-        const response = await fetch("publicar/postsRecents", {
+        const teste = await fetch("publicar/postsRecents", {
             method: 'get'
         });
-        const posts = await response.json();
+        const posts = await teste.json();
         console.log(posts);
 
         return posts;
@@ -75,5 +71,4 @@ const News = {
     }
 }
 
-window.onload = Main.init; 
-window.onload = News.init;
+window.onload = Main.init, News.init;
