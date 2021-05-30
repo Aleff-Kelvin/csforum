@@ -71,4 +71,7 @@ const News = {
     }
 }
 
-window.onload = Main.init, News.init;
+window.onload = () => {
+    Main.init();
+    News.init();
+}

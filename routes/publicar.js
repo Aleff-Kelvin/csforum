@@ -23,6 +23,47 @@ router.post('/inserir', async function(req, res, next) {
   	});
 });
 
+/* Atualizar um post */
+router.post('/atualizar', async function(req, res, next) {
+	console.log('\nAtualizar um post');
+	
+	var idPost = req.body.id;
+	var campo = req.body.campo;
+	var valorCampo;
+
+	if (req.body.titulo != '') {valorCampo = req.body.titulo}
+	if (req.body.descricao != '') {valorCampo = req.body.descricao}
+	if (req.body.imagem != '') {valorCampo = req.body.imagem}
+	if (req.body.categoria != '') {valorCampo = req.body.categoria}
+	if (req.body.conteudo != '') {valorCampo = req.body.conteudo}
+
+	let atualizarPost = await Publicar.update({ [campo]: [valorCampo] }, {
+		where: {id_post: [idPost]}
+	}).then(resultado => {
+		console.log(`Registro alterado: ${resultado}`);
+		console.log(`\nid do post: ${idPost},\nnome do campo: ${campo},\nalteração: ${valorCampo}\n`);
+
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+
+	// let atualizarPost = `update tb_post set ${campo}_post = '${valorCampo}' where id_post = ${idPost};`;
+	// console.log(atualizarPost);
+
+	// sequelize.query(atualizarPost, {
+	// 	model: Publicar
+
+	// }).then(resultado => {
+	// 	console.log(`Registro alterado: ${resultado}`)
+    //     res.send(resultado);
+    // }).catch(erro => {
+	// 	console.error(erro);
+	// 	res.status(500).send(erro.message);
+  	// });
+
+});
 
 /* Mostrar os posts recentes */
 router.get('/postsRecents', async function(req, res, next) {
@@ -35,6 +76,12 @@ router.get('/postsRecents', async function(req, res, next) {
 });
 
 /* Mostrar os posts */
+router.get('/posts', async function(req, res, next) {
+	const publicacoes = await Publicar.findAll({order: [["id_post","DESC"]]});
+
+	res.send(publicacoes);
+});
+
 router.get('/posts', async function(req, res, next) {
 	const publicacoes = await Publicar.findAll({order: [["id_post","DESC"]]});
 

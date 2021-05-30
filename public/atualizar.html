@@ -46,21 +46,22 @@
 
             <div class="opt-edit">
                 <h2>O que você quer editar?</h2>
-                <select id="editar" onchange="return editar_campo()" required minlength="4">
-                    <option value="titulo">Titulo</option>
-                    <option value="descricao">Descrição</option>
-                    <option value="imagem">Imagem</option>
-                    <option value="categoria">Categoria</option>
-                    <option value="conteudo">Conteudo</option>
+                <select id="editar" name="campo" onchange="return editar_campo()" required minlength="4">
+                    <option value="vazio">Selecione o campo...</option>
+                    <option value="titulo_post">Titulo</option>
+                    <option value="descricao_post">Descrição</option>
+                    <option value="imagem_post">Imagem</option>
+                    <option value="categoria_post">Categoria</option>
+                    <option value="conteudo_post">Conteudo</option>
                 </select>
             </div>
 
-            <form id="form_publicar" method="post" onsubmit="return atualizar()">
+            <form id="form_publicar" method="post" onsubmit="return atualizar()" novalidate>
                 <h1 id="h1">Atualize um Post!</h1>
 
                 <div id="sec_id">
                     <p>Id do Post:</p>
-                    <input type="text" name="id" id="id" autofocus="autofocus" required minlength="4">
+                    <input type="text" name="id" id="id" autofocus="autofocus" required minlength="1">
                 </div>
                 
                 <div id="sec_titulo">
@@ -80,11 +81,12 @@
                 
                 <div id="sec_categoria">
                     <p>Categoria do Post:</p>
-                    <select name="categoria" id="categoria" required minlength="4">
+                    <input type="text" name="categoria" id="categoria" required minlength="4">
+                    <!-- <select name="categoria" id="categoria" required minlength="4">
                         <option value="dicas">Dicas</option>
                         <option value="curiosidades">Curiosidades</option>
                         <option value="novidades">Novidades</option>
-                    </select>
+                    </select> -->
                 </div>
             
                 <div id="sec_conteudo">
@@ -113,7 +115,7 @@
     function editar_campo() {
         var campo_escolhido = editar.value;
 
-        if (campo_escolhido == 'titulo') {
+        if (campo_escolhido == 'titulo_post') {
             form_publicar.style.display='block';
             sec_id.style.display='block';
             sec_titulo.style.display='block';
@@ -121,10 +123,10 @@
             sec_descricao.style.display='none';
             sec_imagem.style.display='none';
             sec_categoria.style.display='none';
-            sec_conteudo.style.display='none';   
+            sec_conteudo.style.display='none';
         }
         
-        if (campo_escolhido == 'descricao') {
+        if (campo_escolhido == 'descricao_post') {
             form_publicar.style.display='block';
             sec_id.style.display='block';
             sec_descricao.style.display='block';
@@ -135,7 +137,7 @@
             sec_conteudo.style.display='none'; 
         }
 
-        if (campo_escolhido == 'imagem') {
+        if (campo_escolhido == 'imagem_post') {
             form_publicar.style.display='block';
             sec_id.style.display='block';
             sec_imagem.style.display='block';
@@ -146,7 +148,7 @@
             sec_conteudo.style.display='none'; 
         }
 
-        if (campo_escolhido == 'categoria') {
+        if (campo_escolhido == 'categoria_post') {
             form_publicar.style.display='block';
             sec_id.style.display='block';
             sec_categoria.style.display='block';
@@ -157,7 +159,7 @@
             sec_conteudo.style.display='none'; 
         }
 
-        if (campo_escolhido == 'conteudo') {
+        if (campo_escolhido == 'conteudo_post') {
             form_publicar.style.display='block';
             sec_id.style.display='block';
             sec_conteudo.style.display='block';
@@ -170,35 +172,30 @@
         
     }
 
-    function publicar() {
+    function atualizar() {
         var formulario = new URLSearchParams(new FormData(form_publicar));
 
-        if (!(categoria.value == 'vazio')) {
-            fetch("/publicar/inserir", {
+        fetch("/publicar/atualizar", {
 
-                method: "POST",
-                body: formulario
+            method: "POST",
+            body: formulario
 
-            }).then(function (response) {
+        }).then(function (response) {
             if (response.ok) {
-                alert(`Publicação está no ar!`);
+                alert(`Publicação foi atualizada!`);
                 
-                titulo.value = ``;
-                descricao.value = ``;
-                imagem.value = ``;
-                conteudo.value = ``;
+                // titulo.value = ``;
+                // descricao.value = ``;
+                // imagem.value = ``;
+                // conteudo.value = ``;
 
             } else {
                 alert(`Erro ao tentar publicar!`);
             }
 
-            });
+        });
 
-            return false;
-
-        } else {
-            alert(`Insira uma categoria!`);
-        }
+        return false;
         
     }
 
