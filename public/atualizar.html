@@ -37,16 +37,16 @@
     <div class="container-admin">
         <div class="opt-admin">
            <a href="index.html"><img src="assets/img/btn-sair.png" alt=""></a>
-           <a href="adicionar.html"><img src="assets/img/btn-adicionar.png" alt="" class="opt-active"></a>
+           <a href="publicar.html"><img src="assets/img/btn-adicionar.png" alt="" class="opt-active"></a>
            <a href="atualizar.html"><img src="assets/img/btn-atualizar.png" alt=""></a>
-           <a href=""><img src="assets/img/btn-excluir.png" alt=""></a>            
+           <a href="excluir.html"><img src="assets/img/btn-excluir.png" alt=""></a>            
         </div>
 
         <div class="form-pub">
 
             <div class="opt-edit">
                 <h2>O que você quer editar?</h2>
-                <select id="editar" name="campo" onchange="return editar_campo()" required minlength="4">
+                <select id="editar" name="aaa" onchange="return editar_campo()" required minlength="4">
                     <option value="vazio">Selecione o campo...</option>
                     <option value="titulo_post">Titulo</option>
                     <option value="descricao_post">Descrição</option>
@@ -94,7 +94,7 @@
                     <textarea name="conteudo" id="conteudo" cols="52" rows="5" required minlength="4"></textarea>
                 </div>
                 <br>
-                <input type="submit" id="btn_enviar" value="Postar!">
+                <input type="submit" id="btn_enviar" value="Atualizar Post!">
             </form>
         </div>    
     </div>
@@ -190,7 +190,7 @@
                 // conteudo.value = ``;
 
             } else {
-                alert(`Erro ao tentar publicar!`);
+                alert(`Erro ao tentar atualizar!`);
             }
 
         });

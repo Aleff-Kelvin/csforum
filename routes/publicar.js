@@ -28,7 +28,8 @@ router.post('/atualizar', async function(req, res, next) {
 	console.log('\nAtualizar um post');
 	
 	var idPost = req.body.id;
-	var campo = req.body.campo;
+	var campo = req.body.aaa;
+	console.log(campo);
 	var valorCampo;
 
 	if (req.body.titulo != '') {valorCampo = req.body.titulo}
@@ -49,20 +50,21 @@ router.post('/atualizar', async function(req, res, next) {
 		res.status(500).send(erro.message);
   	});
 
-	// let atualizarPost = `update tb_post set ${campo}_post = '${valorCampo}' where id_post = ${idPost};`;
-	// console.log(atualizarPost);
+});
 
-	// sequelize.query(atualizarPost, {
-	// 	model: Publicar
+/* Excluir um post */
+router.post('/excluir', function(req, res, next) {
+	console.log('Excluindo um post');
+	
+	var idPost = req.body.id;
 
-	// }).then(resultado => {
-	// 	console.log(`Registro alterado: ${resultado}`)
-    //     res.send(resultado);
-    // }).catch(erro => {
-	// 	console.error(erro);
-	// 	res.status(500).send(erro.message);
-  	// });
+	var excluirPost = Publicar.destroy({
+		where: {
+		  id_post: [idPost]
+		}
+	  });
 
+	res.send(excluirPost);
 });
 
 /* Mostrar os posts recentes */
@@ -76,12 +78,6 @@ router.get('/postsRecents', async function(req, res, next) {
 });
 
 /* Mostrar os posts */
-router.get('/posts', async function(req, res, next) {
-	const publicacoes = await Publicar.findAll({order: [["id_post","DESC"]]});
-
-	res.send(publicacoes);
-});
-
 router.get('/posts', async function(req, res, next) {
 	const publicacoes = await Publicar.findAll({order: [["id_post","DESC"]]});
 
