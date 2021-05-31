@@ -77,14 +77,14 @@ router.get('/postsRecents', async function(req, res, next) {
 	res.send(ultimasPublicacoes);
 });
 
-/* Mostrar os posts */
+/* Mostrar todos os posts */
 router.get('/posts', async function(req, res, next) {
 	const publicacoes = await Publicar.findAll({order: [["id_post","DESC"]]});
 
 	res.send(publicacoes);
 });
 
-/* Mostrar cada publicação */
+/* Mostrar cada post */
 router.get('/posts/:id', async function(req, res, next) {
 	const {id} = req.params;
 	const publicacao = await Publicar.findOne({where: {id}});
