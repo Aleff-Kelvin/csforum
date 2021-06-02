@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Quantico&amp;display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/img/logo2.png"
-    type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/estilo.css">
-    <script src="assets/js/index.js"></script>
-    <title>CSBlog | Plataforma para Players de CS!</title>
+    <script src="assets/js/funcoes.js"></script>
+    <script src="assets/js/logado.js"></script>
+    <title>CSInfo | Plataforma para Players de CS!</title>
 </head>
 <body>
+
     <div class="color-menu" id="menu">
         <div class="container">
             <nav>
                 <div class="section-nav">
-                    <a href="index.html" class="logo"><span>CS</span> Blog</a>
+                    <a href="index.html" class="logo"><span>CS</span> Info</a>
                 </div>
                 <div class="section-nav">
                     <ul>
                         <li><a href="index.html" class="active-li">Início</a></li>
                         <li><a href="historia.html">História do CS</a></li>
-                        <li><a href="#">Sair</a></li>
+                        <li><a href="#" onclick="logoff()">Sair</a></li>
                     </ul>
                 </div>
             </nav>
@@ -43,7 +43,7 @@
             <h1>Recentes</h1>
 
             <div class="p-posts-align" id="p_posts_aligni">
-                <div class="item-p-posts">
+                <!-- <div class="item-p-posts">
                     <a href="publicacao.html"><p class="hover-posts">Ver post</p></a>
                 </div>
                 <div class="item-p-posts">
@@ -51,11 +51,11 @@
                 </div>
                 <div class="item-p-posts">
                     <a href="publicacao.html"><p class="hover-posts">Ver post</p></a>
-                </div>
+                </div> -->
             </div>
 
             <div class="p-posts-align" id="p_posts_alignt">
-                <div class="item-info-posts">
+                <!-- <div class="item-info-posts">
                     <h3>Titulo 1</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus necessitatibus minus totam,
                     exercitationem assumenda nobis modi libero maxime tenetur deserunt, quae, commodi neque dolorum?</p>
@@ -69,14 +69,14 @@
                     <h3>Titulo 3</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus necessitatibus minus totam,
                     exercitationem assumenda nobis modi libero maxime tenetur deserunt, quae, commodi neque dolorum?</p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 
     <div class="perfil">
         <div class="container align-perfil">
-            <h1>Olá Sr(a). Aleff! Tudo bem?</h1>
+            <h1>Olá Sr(a). <b id="result_nome"></b>! Tudo bem?</h1>
             <p>Aproveite todas informações que estão disponibilizadas</p>
             <p>especialmente para você abaixo!</p>
         </div>
@@ -95,11 +95,11 @@
 
     <div class="posts">
         <div class="container">
-            <h1>Noticias</h1>
+            <h1>Novidades</h1>
 
             <div class="posts-align">
                 <div class="display-item-post">
-                    <div class="item-posts">
+                    <!-- <div class="item-posts">
                         <div class="img-post">
                             <a href="publicacao.html"><p class="hover-posts">Ver post</p></a>
                         </div>
@@ -108,7 +108,7 @@
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus necessitatibus minus totam,
                             exercitationem assumenda nobis modi libero maxime tenetur deserunt, quae, commodi neque dolorum?</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@
             </p>
 
             <div class="align-logo">
-                <a href="#" class="logo"><span>CS</span> Blog</a>
+                <a href="logado.html" class="logo"><span>CS</span> Info</a>
             </div>
         </div>
     </div>
@@ -131,7 +131,7 @@
 <script>
 
     (function () {
-        var menu = document.getElementById('menu'); // colocar em cache
+        var menu = document.getElementById('menu');
    
         window.addEventListener('scroll', function () {
             if (window.scrollY > 0) {
@@ -145,75 +145,5 @@
         });
     })();
 
-    function cadastrar() {
-        var formulario = new URLSearchParams(new FormData(form_cadastrar));
-
-        fetch("/usuarios/cadastrar", {
-
-            method: "POST",
-            body: formulario
-
-        }).then(function (response) {
-            if (response.ok) {
-                alert(`Usuario cadastrado com sucesso!`);
-
-            } else {
-                alert(`Erro ao tentar cadastrar!`);
-            }
-
-        });
-
-        return false;
-        
-    }
-
-    function entrar() {
-        var formulario = new URLSearchParams(new FormData(form_entrar));
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
-
-            if (resposta.ok) {
-
-                resposta.json().then(json => {
-
-                    sessionStorage.login_usuario_meuapp = json.email_log;
-
-                    window.location.href = 'historia.html';
-                });
-
-            } else {
-
-                console.log('Erro de login!');
-
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-        });
-
-        return false;
-    }
-
 </script>
 
-    <!-- <div class="container">
-        <nav>
-            <div class="section-nav">
-                <input type="checkbox" id="menu_hamb" class="input-menu">
-
-                <label for="menu_hamb">
-                    <div class="menu">
-                        <span class="hamburguer"></span>
-                    </div>
-                </label>
-            
-                <ul class="menu-ul">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div> -->

@@ -23,11 +23,6 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		// data: {
-		// 	field: 'data_post',
-		// 	type: DataTypes.DATE,
-		// 	allowNull: false
-		// },
 		imagem: {
 			field: 'imagem_post',
 			type: DataTypes.STRING,
@@ -44,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}, 
 	{
-		tableName: 'tb_post', 
+		tableName: 'post', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

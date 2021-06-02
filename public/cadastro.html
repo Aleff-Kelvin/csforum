@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="assets/img/logo2.png"
     type="image/x-icon">
     <link rel="stylesheet" href="assets/css/estilo.css">
-    <title>CSBlog | Plataforma para Players de CS!</title>
+    <title>CSInfo | Plataforma para Players de CS!</title>
 </head>
 <body bgcolor="#ecf0f1">
     
@@ -16,7 +16,7 @@
         <div class="container">
             <nav>
                 <div class="section-nav">
-                    <a href="index.html" class="logo"><span>CS</span> Blog</a>
+                    <a href="index.html" class="logo"><span>CS</span> Info</a>
                 </div>
                 <div class="section-nav">
                     <ul>
@@ -43,11 +43,13 @@
                 <h1>Crie uma conta!</h1>
                 <p>Fique por dentro de todas novidades!</p>
 
-                <input type="text" id="nome_cad" name="nome_usu" placeholder="Nome">
+                <input type="text" id="nome_cad" name="nome" placeholder="Nome">
     
-                <input type="email" id="email_cad" name="email_usu" placeholder="E-mail">
+                <input type="text" id="login_cad" name="login" placeholder="Login">
+
+                <input type="email" id="email_cad" name="email" placeholder="E-mail">
     
-                <input type="password" id="senha_cad" name="senha_usu" placeholder="Senha">
+                <input type="password" id="senha_cad" name="senha" placeholder="Senha">
     
                 <input type="submit" value="Criar conta!">
             </form>
@@ -61,7 +63,7 @@
             </p>
 
             <div class="align-logo">
-                <a href="#" class="logo"><span>CS</span> Blog</a>
+                <a href="#" class="logo"><span>CS</span> Info</a>
             </div>
         </div>
     </div>
@@ -74,7 +76,7 @@
     menu.style.background='#000';
 
     (function () {
-        var menu = document.getElementById('menu'); // colocar em cache
+        var menu = document.getElementById('menu');
 
         window.addEventListener('scroll', function () {
             if (window.scrollY > 0) {
@@ -101,6 +103,11 @@
         }).then(function (response) {
             if (response.ok) {
                 alert(`Usuario cadastrado com sucesso!`);
+
+                nome_cad.value = ``;
+                login_cad.value = ``;
+                email_cad.value = ``;
+                senha_cad.value = ``;
 
             } else {
                 alert(`Erro ao tentar cadastrar!`);

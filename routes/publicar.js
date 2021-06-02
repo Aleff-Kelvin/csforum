@@ -24,11 +24,12 @@ router.post('/inserir', async function(req, res, next) {
 });
 
 /* Atualizar um post */
-router.post('/atualizar', async function(req, res, next) {
+router.post('/atualizar', function(req, res, next) {
 	console.log('\nAtualizar um post');
 	
 	var idPost = req.body.id;
 	var campo = req.body.aaa;
+
 	console.log(campo);
 	var valorCampo;
 
@@ -38,17 +39,27 @@ router.post('/atualizar', async function(req, res, next) {
 	if (req.body.categoria != '') {valorCampo = req.body.categoria}
 	if (req.body.conteudo != '') {valorCampo = req.body.conteudo}
 
-	let atualizarPost = await Publicar.update({ [campo]: [valorCampo] }, {
+	let atualizarPost = Publicar.update({ [campo]: [valorCampo] }, {
 		where: {id_post: [idPost]}
-	}).then(resultado => {
-		console.log(`Registro alterado: ${resultado}`);
-		console.log(`\nid do post: ${idPost},\nnome do campo: ${campo},\nalteração: ${valorCampo}\n`);
+	});
 
-        res.send(resultado);
-    }).catch(erro => {
-		console.error(erro);
-		res.status(500).send(erro.message);
-  	});
+	res.send(atualizarPost);
+	
+	// var atualizarPost = `update post set ${campo} = '${valorCampo}' where id_post = ${idPost};`;
+
+	// var atualizarPost = "update post set descricao_post = 'mudar' where id_post = 2;";;
+
+	// sequelize.query(atualizarPost, {
+	// 	model: Publicar
+	// }).then(resultado => {
+	// 	console.log(`Registro alterado: ${resultado}`);
+	// 	console.log(`\nid do post: ${idPost},\nnome do campo: ${campo},\nalteração: ${valorCampo}\n`);
+
+    //     res.send(resultado);
+    // }).catch(erro => {
+	// 	console.error(erro);
+	// 	res.status(500).send(erro.message);
+  	// });
 
 });
 
@@ -75,6 +86,15 @@ router.get('/postsRecents', async function(req, res, next) {
 	});
 
 	res.send(ultimasPublicacoes);
+});
+
+/* Mostrar posts sem estar logado */
+router.get('/postsIndex', async function(req, res, next) {
+	const publicacoesIndex = await Publicar.findAll({
+		order: [["id_post","DESC"]], 
+    	limit: 5,
+	});
+	res.send(publicacoesIndex);
 });
 
 /* Mostrar todos os posts */

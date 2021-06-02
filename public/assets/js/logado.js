@@ -3,7 +3,7 @@ const Main = {
         Main.buildPosts();
     },
     getPosts: async () => {
-        const response = await fetch("/publicar/postsIndex", {
+        const response = await fetch("/publicar/posts", {
             method: 'get'
         });
         const posts = await response.json();
@@ -72,4 +72,5 @@ const News = {
 window.onload = () => {
     Main.init();
     News.init();
+    verificar_autenticacao();
 }

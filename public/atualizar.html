@@ -5,58 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Quantico&amp;display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/img/logo2.png"
-    type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/logo2.png" type="image/x-icon">
+    <script src="assets/js/funcoes.js"></script>
     <link rel="stylesheet" href="assets/css/estilo.css">
-    <title>CSBlog | Plataforma para Players de CS!</title>
+    <title>CSInfo | Plataforma para Players de CS!</title>
 </head>
 <body bgcolor="#6282b6">
-    <!-- <div class="color-menu" id="menu">
-        <div class="container">
-            <nav>
-                <div class="section-nav">
-                    <a href="index.html" class="logo"><span>CS</span> Blog</a>
-                </div>
-                <div class="section-nav">
-                    <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="historia.html">História do CS</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">More</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <div class="color-menu-admin">
-            <div class="container">
-                <h2>Admin</h2>
-            </div>
-        </div>
-    </div> -->
 
     <div class="container-admin">
         <div class="opt-admin">
-           <a href="index.html"><img src="assets/img/btn-sair.png" alt=""></a>
+           <a href="#" onclick="logoff()"><img src="assets/img/btn-sair.png" alt=""></a>
            <a href="publicar.html"><img src="assets/img/btn-adicionar.png" alt="" class="opt-active"></a>
            <a href="atualizar.html"><img src="assets/img/btn-atualizar.png" alt=""></a>
            <a href="excluir.html"><img src="assets/img/btn-excluir.png" alt=""></a>            
         </div>
 
         <div class="form-pub">
-
-            <div class="opt-edit">
-                <h2>O que você quer editar?</h2>
-                <select id="editar" name="aaa" onchange="return editar_campo()" required minlength="4">
-                    <option value="vazio">Selecione o campo...</option>
-                    <option value="titulo_post">Titulo</option>
-                    <option value="descricao_post">Descrição</option>
-                    <option value="imagem_post">Imagem</option>
-                    <option value="categoria_post">Categoria</option>
-                    <option value="conteudo_post">Conteudo</option>
-                </select>
-            </div>
-
             <form id="form_publicar" method="post" onsubmit="return atualizar()" novalidate>
+                <div class="opt-edit">
+                    <h2>O que você quer editar?</h2>
+                    <select id="editar" name="aaa" onchange="return editar_campo()" required minlength="4">
+                        <option value="vazio">Selecione o campo...</option>
+                        <option value="titulo_post">Titulo</option>
+                        <option value="descricao_post">Descrição</option>
+                        <option value="imagem_post">Imagem</option>
+                        <option value="categoria_post">Categoria</option>
+                        <option value="conteudo_post">Conteudo</option>
+                    </select>
+                </div>
+                
                 <h1 id="h1">Atualize um Post!</h1>
 
                 <div id="sec_id">
@@ -104,7 +81,6 @@
 
 <script>
 
-    form_publicar.style.display='none';
     sec_id.style.display='none';
     sec_titulo.style.display='none';
     sec_descricao.style.display='none';

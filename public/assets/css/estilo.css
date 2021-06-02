@@ -196,7 +196,7 @@ ___________________________________________ */
 .p-posts-align{
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 8px 0;
 }
@@ -245,6 +245,11 @@ ___________________________________________ */
 
 /* cadastro e login
 ___________________________________________ */
+
+.connect{
+    background: #6788bd;
+    padding: 20px 0;
+}
 
 .align-connect{
     display: flex;
@@ -522,6 +527,22 @@ ___________________________________________ */
     word-wrap: break-word;
 }
 
+.btn-verMais{
+    padding: 15px 50px;
+    background: #151515;
+    border: none;
+    color: #f3f3f3;
+    text-transform: uppercase;
+    font-weight: 900;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.btn-verMais:hover{
+    background: #5874af;
+}
+
 /* Footer
 ___________________________________________ */
 
@@ -571,7 +592,8 @@ ___________________________________________ */
 ___________________________________________ */
 
 .align-publicacao{
-    text-align: left;
+    text-align: justify;
+    width: 70%;
 }
 
 .align-publicacao h1{
@@ -603,7 +625,8 @@ ___________________________________________ */
 }
 
 .container-pub{
-    width: 70%;
+    width: 100%;
+    white-space: normal;
 }
 
 .text-pub{
@@ -612,6 +635,7 @@ ___________________________________________ */
     line-height: 35px;
     color: #303030;
     margin-bottom: 20px;
+    white-space: normal;
 }
 
 /* publicar.html */

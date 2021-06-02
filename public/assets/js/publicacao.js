@@ -17,18 +17,17 @@ const Publicacao = {
     buildPost: async (id) => {
         const post = await Publicacao.getPost(id);
 
-        const postContainer = document.querySelector('.align-publicacao');
+        const postContainer = document.querySelector('#postContainer');
         
         postContainer.innerHTML = `
         <div class="container align-publicacao">
             <h1>${post.titulo}</h1>
             <p class="coment-pub">${post.descricao}</p>
-            <p class="data-pub">15 de Maio de 2021 às 15h58</p>
 
             <div class="imagem-pub" style="background-image: url(${post.imagem})"></div>
 
             <div class="container-pub">
-                <p class="text-pub">${post.conteudo}</p>
+                <p class="text-pub" style="text-align: justify; white-space: normal;">${post.conteudo}</p>
             </div>
         </div>`;
     }
