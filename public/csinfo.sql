@@ -42,7 +42,7 @@ insert into post values
     'https://s2.glbimg.com/RLZr36G4_ORKCfxY-FDtPa6AWyE=/0x0:640x454/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2021/w/8/3qB6KfQqC4ofqZgSyyDw/paqueta-cbcs.jpg',
     'novidades', 'A Paquetá garantiu a terceira colocação do CBCS Elite, vencendo a Bravos por 2x0. A equipe leva 1400 pontos para o circuito RMR, enquanto a Bravos fica com 1300; a premiação em dinheiro, curiosamente, é a mesma para ambas equipes, que ficam com R$ 7 mil.Apesar do placar de 2x0, a série foi extremamente equilibrada: a Bravos saiu na frente na Nuke, abrindo 9x6 do lado CT. A Paquetá conseguiu encaixar uma defesa muito sólida e garantiu o primeiro mapa no detalhe, fechando em 16x14.'); 
     
-update post set imagem_post = 'https://s2.glbimg.com/BcxFCQCIOpnr0UiRpmeeTtKzfjM=/1080x608/top/smart/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2021/3/R/G9aqzGTpyABhmWA524VA/furia-cs-go-dreamhack-masters-spring-2021.png' where id_post = 5;   
+update post set imagem_post = 'https://gamerspace.com.br/wp-content/uploads/2017/03/Rifles.png' where id_post = 3;   
     
 select * from post;
 select * from usuario;
