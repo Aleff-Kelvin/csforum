@@ -30,8 +30,43 @@
         </div>
     </div>
 
-    <div class="section-cs">
-        <div class="container align-section-cs">
+    <div id="postContainer">
+        <div class="container align-publicacao" id="postContainer">
+            <h1>Do CS ao CS:GO: veja a evolução do jogo FPS da Valve</h1>
+            <p class="coment-pub" style="font-weight: 700;">Relembre o crescimento do cenário competitivo da franquia ao longo dos anos</p>
+
+            <div class="container-pub">
+                <p class="text-pub">A franquia Counter-Strike é uma das mais famosas do mundo dos videogames e dos esports. 
+                Lançado inicialmente como um mod do game Half-Life, o jogo fez sucesso ainda em sua versão beta e foi 
+                disponibilizado para download pela Valve oficialmente em novembro de 2000. O game marcou a geração das lan
+                houses e foi um dos percursores dos jogos competitivos. A versão mais recente da série, o Counter-Strike: 
+                Global Offensive, chegou em 2012 e faz sucesso até hoje. Confira, a seguir, a evolução dos jogos em um
+                comparativo entre o CS e o CS:GO.</p>
+            </div>
+
+            <div class="imagem-pub" style="background-image: url(https://www.topgadget.com.br/wp-content/uploads/2020/06/counter-strike-cs-16.jpg);"></div>
+    
+            <div class="container-pub">
+                <h2>Lançamento e plataformas</h2>
+                <p class="text-pub">Após 19 versões beta, Counter-Strike foi lançado oficialmente em 2000 somente para PC, na
+                versão 1.0. O jogo recebeu diversas atualizações até chegar na 1.6, jogada até os dias de hoje. Em sua versão
+                base, o game contava com o modo multiplayer com diversos mapas distribuídos em modos de detonação de bomba
+                (que contam com prefixo "de_" antes de seu nome), resgate de refém ("cs_") e assassinato ("as_"). É possível
+                também jogar partidas com bots. Em 2019, CS 1.6 ainda conta com uma média de aproximadamente 10 mil jogadores
+                por mês, sendo um dos 50 games mais populares na Steam.</p>
+
+                <p class="text-pub">Já Counter-Strike: Global Offensive foi disponibilizado para PlayStation 3, Xbox 360 e PC
+                quando foi lançado em 2012. Apesar disso, muitas de suas atualizações não estão disponíveis para os consoles,
+                como a que deixou o jogo gratuito e acrescentou um modo Battle Royale no fim de 2018. CS:GO conta com os mapas
+                do CS 1.6 repaginados, com melhores gráficos e algumas alterações no layout, além de também oferecer playlists
+                de jogos mata-mata, corrida armada, entre outros.</p>
+            </div>
+
+            <div class="container-pub">
+                <h2>Gráficos, modos e mods da comunidade</h2>
+            </div>
+
+            <div class="imagem-pub" style="background-image: url(https://www.routech.ro/wp-content/uploads/1602689287_Cum-se-creeaza-CS-GO-Server-pe-Linux-VPS.jpg);"></div>
 
         </div>
     </div>
@@ -52,17 +87,21 @@
 
 <script>
 
+    menu.style.background='#000';
+
     (function () {
         var menu = document.getElementById('menu');
-   
+
         window.addEventListener('scroll', function () {
             if (window.scrollY > 0) {
                 menu.classList.add('color-menu-fixo');
                 menu.classList.remove('color-menu');
+                menu.style.borderBottom='none';
             } 
             else{
                 menu.classList.remove('color-menu-fixo');
                 menu.classList.add('color-menu');
+                menu.style.borderBottom='3px solid #518cf3';
             }
         });
     })();
